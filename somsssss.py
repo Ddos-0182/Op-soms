@@ -32,14 +32,14 @@ key_file = 'keys.txt'
 # Key Prices
 key_prices = {
     "magic_server": {
-        "1_Day": 100,
-        "3_Days": 250,
-        "7_Days": 500
+        "1_Day": 150,
+        "7_Days": 450,
+        "1_Month": 1000
     },
     "not_available_server": {
-        "1_month": 150000,
-        "3_months": 3500000,
-        "6_months": 6000000
+        "1_month": 150,
+        "3_months": 350,
+        "6_months": 600
     }
 }
 
@@ -122,7 +122,7 @@ async def process_buy(event):
         return
 
 amount = key_prices[server][duration]
-    upi_id = "theycallmesoms@axl"  # Replace with your UPI ID
+    upi_id = "theycallmesoms@ybl"  # Replace with your UPI ID
     transaction_id = generate_transaction_id()
     qr_path = generate_upi_qr(upi_id, amount, transaction_id)
     
