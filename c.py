@@ -493,7 +493,8 @@ async def set_max_attack_duration(update: Update, context: CallbackContext):
         return MAX_ATTACK_DURATION
 
 # Function to set cooldown_period
-async def set_cooldown_period
+async def set_cooldown_period(update: Update, context: CallbackContext):
+    global cooldown_period
 
     try:
         cooldown_period = int(update.message.text)
